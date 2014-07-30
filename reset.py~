@@ -1,0 +1,20 @@
+import commands
+import sys
+import os
+import string
+import shutil
+ 
+src = '/nfs/guille/groce/users/lamki/Desktop/gosmith/src/gosmith/Backups'
+dst= '/nfs/guille/groce/users/lamki/Desktop/gosmith/src/gosmith'
+ 
+def copyFile(src, dest):
+    try:
+        shutil.copy(src, dest)
+    # eg. src and dest are the same file
+    except shutil.Error as e:
+        print('Error: %s' % e)
+    # eg. source or destination doesn't exist
+    except IOError as e:
+        print('Error: %s' % e.strerror)
+
+copyfile( )

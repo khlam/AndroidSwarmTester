@@ -1,0 +1,11 @@
+package a
+import "b"
+var _ = b.UsePackage
+var Var1024 = ((*((*(((((*((((*(([]*[1][1]*[1][2][1]**func(chan complex128) []func([1]complex128) *[0][1]int{})[(<- make(chan int ,1))])))[((func([2]float32,string) int)(nil))([2]float32{},"foo")])[(<- make(chan int ))])))[(([]int{})[(map[chan uint]int{})[make(chan uint )]]) - (1)])[(int)((len)(([]string{})[(((*((([][2]*[2][2]int{})[(int)((len)((([][0]chan uintptr{})[(int)(([]float32{})[(int)((Var1582)[(<- make(chan int ,1))] ,)] )])[((func(map[interface { }]complex128,int) int)(nil))(map[interface { }]complex128{},1)]))])[(int)((Var2318)[(int)((len)(((*((([][2]*[0]string{})[(map[int16]int{})[int16(1)]])[((b.Var2505)[((*(((*((Var2506)[Var2560])))[((func(interface{},[]map[complex128]uintptr,float64,struct { }) int)(nil))(interface{}(nil),[]map[complex128]uintptr{},1.0,(struct { }{}))])))[(<- make(chan int ))]]) + (1)])))[((func(*uintptr,interface{},func(interface { },interface { }) (rune,rune),complex64) int)(nil))((*uintptr)(nil),interface{}(nil),((func(interface { },interface { }) (rune,rune))(nil)),complex64(1i))]))] ,)])))[(int)((([][1]float32{})[(([]int{})[(map[bool]int{})[false]]) + (1)])[(([]int{})[(<- make(chan int ))]) + (1)] )])[(*((*(([]**int{})[((func(float32) int)(nil))(float32(1.0))]))))]]))])[(<- make(chan int ))]))))(make(chan complex128 ,1)))[(<- make(chan int ))]([1]complex128{})
+var Var1735 = (*((((*((([2][]*[][0]*func(interface {  Method1871 (string,complex64,uintptr,[]rune) []complex64
+},uint,bool,byte) [1][]*string{})[(<- make(chan int ,1))])[(*(([]*func(uintptr,[]int,rune,complex128) int{})[((func(int16) int)(nil))(int16(1))]))(uintptr(0),[]int{},rune(0),1i)])))[(int)((([]struct { Field1985 int
+Field1986 float64
+}{})[((func(uintptr,byte,uint,[]map[byte]string) int)(nil))(uintptr(0),byte(0),uint(1),[]map[byte]string{})]).Field1986 )])[((([]struct { Field2034 int
+Field2035 float64
+}{})[(int)((len)((([][0]string{})[(int)(([]float32{})[((*(([]*int{})[(int)((*((*((*(([]***int16{})[((func([1]chan float32) int)(nil))([1]chan float32{})])))))) )]))) - (1)] ,)])[((func([0]rune,uint) int)(nil))([0]rune{},uint(1))]))]).Field2034) + (1)]))(interface {  Method1871 (string,complex64,uintptr,[]rune) []complex64
+}(nil),uint(1),false,byte(0))

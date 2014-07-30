@@ -1,0 +1,97 @@
+import commands
+import sys
+import os
+import random
+
+
+def replace(filename, old, star, var, end):
+        s=open(filename).read()
+	new = toStr(star), toStr(var), toStr(end)
+        if old in s:
+                print 'Changed "{old}" to "{new}"'.format(**locals())
+                s=s.replace(old, toStr(new))
+                f=open(filename, 'w')
+                f.write(s)
+                f.flush()
+                f.close()
+        else:
+                print 'No occurances of "{old}" found. Advise running SwarmReset.py'.format
+
+def log(log, case):
+	f = open("LOG/Log.txt", "a")
+	f.write('\n')
+	f.write(log)
+	f.write(': ')
+	f.write(case)
+	f.close()
+
+def dequote(s):
+    """
+    If a string has single or double quotes around it, remove them.
+    If a matching pair of quotes is not found, return the string unchanged.
+    """
+    if (
+        s.startswith(("'", '"')) and s.endswith(("'", '"'))
+        and (s[0] == s[-1])  # make sure the pair of quotes match
+    ):
+        s = s[1:-1]
+    return s
+
+def randomChooseType():
+	var0 = random.randrange(0,2+1)
+	if var0 == 0:
+		print "Replacing with normal"
+		replace('type.go.go', 'switch choice("normal", "keyed") { //line335', 'switch choice','("normal")', '{ //line335')
+		log('type.go', 'normal')
+	elif var0 == 1:
+		print "Replacing with keyed"
+		replace('type.go', 'switch choice("normal", "keyed") { //line335', 'switch choice','("keyed")', '{ //line335')
+		log('type.go', 'keyed')
+	elif var0 == 2:
+		print "Replacing with normal + keyed"
+		log('type.go', 'normal+keyed')
+		var = random.randrange(0,2+1)
+
+	var1 = random.randrange(0,2+1)
+	if var1 == 0:
+		print "Replacing with normal"
+		replace('type.go', 'switch choice("normal", "keyed") { //line378', 'switch choice','("normal")', '{ //line378')
+		log('type.go', 'normal')
+	elif var1 == 1:
+		print "Replacing with keyed"
+		replace('type.go', 'switch choice("normal", "keyed") { //line378', 'switch choice','("keyed")', '{ //line378')
+		log('type.go', 'keyed')
+	elif var1 == 2:
+		print "Replacing with normal + keyed"
+		log('type.go', 'normal+keyed')
+
+def randomChooseExpr():
+	actionchoice = [' "lvalue",', '"call",', '"len",', '"selector",', '"recv",', '"arith",', '"indexMap",', '"conv",']
+	choice = filter( lambda x: random.randint(0,1) == 0, actionchoice)
+	print "Replacing with", choice
+	replace('expr.go', 'switch choice("lvalue", "call", "len", "selector", "recv", "arith", "indexMap", "conv") { //line60', 'switch choice(',dequote(toStr(choice)),'){ //line60')
+	log('expr.go', toStr(choice))
+
+
+def toStr(x):
+  str = ''
+  for i in x:
+     str += i
+  return str
+
+
+#os.system ("go build gosmith")
+#print "Gosmith built"
+#print "Replacing" "with"
+#path = '/nfs/guille/groce/users/lamki/Desktop/gosmith/src'
+#mycwd = os.getcwd()\
+os.chdir ("..")
+os.chdir ("/nfs/guille/groce/users/lamki/Desktop/gosmith/src/gosmith")
+os.system ("mkdir LOG")
+#randomChooseType()
+randomChooseExpr()
+
+
+#os.chdir (mycwd)
+#os.system ("go run driver.go -checkers=amd64,386,arm,exec")
+#print "Running Test"
